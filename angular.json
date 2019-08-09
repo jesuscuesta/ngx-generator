@@ -114,6 +114,41 @@
           }
         }
       }
+    },
+    "@jcuesta/ngx-generator": {
+      "projectType": "library",
+      "root": "projects/jcuesta/ngx-generator",
+      "sourceRoot": "projects/jcuesta/ngx-generator/src",
+      "prefix": "generator",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/jcuesta/ngx-generator/tsconfig.lib.json",
+            "project": "projects/jcuesta/ngx-generator/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/jcuesta/ngx-generator/src/test.ts",
+            "tsConfig": "projects/jcuesta/ngx-generator/tsconfig.spec.json",
+            "karmaConfig": "projects/jcuesta/ngx-generator/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/jcuesta/ngx-generator/tsconfig.lib.json",
+              "projects/jcuesta/ngx-generator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ngx-generator"
 }
