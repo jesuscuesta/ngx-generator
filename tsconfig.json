@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@jcuesta/ngx-generator": [
+        "dist/jcuesta/ngx-generator"
+      ],
+      "@jcuesta/ngx-generator/*": [
+        "dist/jcuesta/ngx-generator/*"
+      ]
+    }
   }
 }
